@@ -9,6 +9,8 @@ from .spectral import (
     unnormalized_laplacian,
 )
 
+__version__ = "0.1.0"
+
 __all__ = [
     "compute_inertia",
     "gaussian_similarity",
