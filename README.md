@@ -18,9 +18,9 @@ A student portfolio that connects linear algebra coursework to applied machine-l
 ├── coursework/MATH412/          # Cleaned course notebooks
 │   └── notebooks/
 ├── projects/
-│   ├── mini-transformer-lab/    # Project 1 — small NumPy transformer study (pending)
-│   └── spectral-clustering-study/  # Project 2 — graph clustering study (landed)
-├── src/applied_ml/              # Shared helpers (k-means, spectral utils; more coming)
+│   ├── mini-transformer-lab/    # Project 1 — small NumPy transformer study
+│   └── spectral-clustering-study/  # Project 2 — graph clustering study
+├── src/applied_ml/              # Shared helpers (attention, sparsity, k-means, spectral)
 ├── tests/                       # Pytest suite
 ├── assets/figures/              # Saved experiment figures
 ├── requirements.txt
@@ -33,19 +33,19 @@ A student portfolio that connects linear algebra coursework to applied machine-l
 |------|--------|
 | Repo layout, root docs, pinned deps, smoke test | **Ready** |
 | [Coursework — MATH 412](coursework/MATH412/) | **Ready** — cleaned weekly notebooks in `notebooks/` |
-| [Project 1 — Mini-Transformer Lab](projects/mini-transformer-lab/) | **In progress** — experiments and write-up not published yet |
+| [Project 1 — Mini-Transformer Lab](projects/mini-transformer-lab/) | **Ready** — lab code, figures, attention/sparsity tests |
 | [Project 2 — Spectral Clustering Study](projects/spectral-clustering-study/) | **Ready** — study code, figures, and tests merged |
-| Shared `src/applied_ml` helpers | **Partial** — k-means and spectral utilities landed; transformer helpers pending |
+| Shared `src/applied_ml` helpers | **Ready** — attention, projections, sparsity, embeddings, k-means, spectral |
 
-MATH 412 notebooks are published under [`coursework/MATH412/`](coursework/MATH412/). The mini-transformer lab is still pending. Spectral Clustering Study results and figures are published under [`projects/spectral-clustering-study/`](projects/spectral-clustering-study/) and [`assets/figures/spectral-clustering-study/`](assets/figures/spectral-clustering-study/).
+MATH 412 notebooks are published under [`coursework/MATH412/`](coursework/MATH412/). Both portfolio projects publish code, scientific READMEs, and figures under [`projects/`](projects/) and [`assets/figures/`](assets/figures/).
 
 ## Projects
 
-### [Mini-Transformer Lab](projects/mini-transformer-lab/) — in progress
+### [Mini-Transformer Lab](projects/mini-transformer-lab/) — ready
 
 **Research question:** What happens inside a small NumPy transformer when we change attention masking, projections, and the sparse linear output head?
 
-A pedagogical, from-scratch transformer (not a pretrained language model). Planned experiments include causal vs unmasked attention visualizations, projection sensitivity, and OLS / Ridge / LASSO sparse heads on synthetic targets.
+A pedagogical, from-scratch NumPy transformer (**not** a pretrained LM; **random** embeddings). Experiments: causal vs unmasked attention heatmaps, projection/input sensitivity, and OLS / Ridge / LASSO sparse heads on a planted synthetic target.
 
 ### [Spectral Clustering Study](projects/spectral-clustering-study/) — ready
 
@@ -77,10 +77,11 @@ pip install -r requirements.txt
 pytest
 ```
 
-Regenerate the spectral clustering study figures:
+Regenerate project figures:
 
 ```bash
-python projects/spectral-clustering-study/run_study.py
+PYTHONPATH=src python3 projects/mini-transformer-lab/run_lab.py
+PYTHONPATH=src python3 projects/spectral-clustering-study/run_study.py
 ```
 
 Open the MATH 412 notebooks:
@@ -102,8 +103,8 @@ Parts of this repository originate from MATH 412 assignment scaffolding (starter
 
 - Course notebooks will state which cells are scaffolding vs original work.
 - Project READMEs separate reused course ideas from independent analysis.
-- The mini-transformer work (when published) is a **small NumPy model for study**, not a pretrained LM.
-- Spectral clustering helpers in `src/applied_ml/` are NumPy/SciPy implementations written for this portfolio; datasets and ARI use scikit-learn.
+- The mini-transformer lab is a **small NumPy model for study**, not a pretrained LM; embeddings are **random / not learned**.
+- Transformer helpers in `src/applied_ml/` generalize MATH 412 scaffolding with portfolio tests and experiments; spectral helpers are NumPy/SciPy implementations written for this portfolio; datasets and ARI use scikit-learn.
 
 ## Reproducibility
 
