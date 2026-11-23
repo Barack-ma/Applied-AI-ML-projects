@@ -15,7 +15,7 @@ A student portfolio that connects linear algebra coursework to applied machine-l
 
 ```text
 .
-├── coursework/MATH412/          # Cleaned course notebooks (in progress)
+├── coursework/MATH412/          # Cleaned course notebooks
 │   └── notebooks/
 ├── projects/
 │   ├── mini-transformer-lab/    # Project 1 — small NumPy transformer study (pending)
@@ -32,12 +32,12 @@ A student portfolio that connects linear algebra coursework to applied machine-l
 | Area | Status |
 |------|--------|
 | Repo layout, root docs, pinned deps, smoke test | **Ready** |
-| [Coursework — MATH 412](coursework/MATH412/) | **In progress** — cleaned notebooks will land in `notebooks/` |
+| [Coursework — MATH 412](coursework/MATH412/) | **Ready** — cleaned weekly notebooks in `notebooks/` |
 | [Project 1 — Mini-Transformer Lab](projects/mini-transformer-lab/) | **In progress** — experiments and write-up not published yet |
 | [Project 2 — Spectral Clustering Study](projects/spectral-clustering-study/) | **Ready** — study code, figures, and tests merged |
 | Shared `src/applied_ml` helpers | **Partial** — k-means and spectral utilities landed; transformer helpers pending |
 
-Coursework and the mini-transformer lab are still pending. Spectral Clustering Study results and figures are published under [`projects/spectral-clustering-study/`](projects/spectral-clustering-study/) and [`assets/figures/spectral-clustering-study/`](assets/figures/spectral-clustering-study/).
+MATH 412 notebooks are published under [`coursework/MATH412/`](coursework/MATH412/). The mini-transformer lab is still pending. Spectral Clustering Study results and figures are published under [`projects/spectral-clustering-study/`](projects/spectral-clustering-study/) and [`assets/figures/spectral-clustering-study/`](assets/figures/spectral-clustering-study/).
 
 ## Projects
 
@@ -53,9 +53,9 @@ A pedagogical, from-scratch transformer (not a pretrained language model). Plann
 
 Compares k-means vs spectral clustering on blobs, concentric circles, and interlocking moons, with bandwidth / connectivity sweeps, seed stability checks, and Laplacian eigenvalue diagnostics. See the project README for the full write-up, how to regenerate figures, and limitations.
 
-### [MATH 412 coursework](coursework/MATH412/) — in progress
+### [MATH 412 coursework](coursework/MATH412/) — ready
 
-Cleaned weekly notebooks will live in [`coursework/MATH412/notebooks/`](coursework/MATH412/notebooks/). See that folder’s README for how submissions will be organized.
+Cleaned weekly notebooks live in [`coursework/MATH412/notebooks/`](coursework/MATH412/notebooks/). See that folder’s README for the week index, HW03 resolution, scaffolding vs original work, and how to open the notebooks.
 
 ## Install and run
 
@@ -83,11 +83,11 @@ Regenerate the spectral clustering study figures:
 python projects/spectral-clustering-study/run_study.py
 ```
 
-When coursework notebooks are available:
+Open the MATH 412 notebooks:
 
 ```bash
-jupyter notebook
-# or: jupyter lab
+cd coursework/MATH412/notebooks
+jupyter lab   # or: jupyter notebook
 ```
 
 Put `src/` on `PYTHONPATH` (or install an editable package later) when importing `applied_ml` from notebooks or scripts outside pytest:
